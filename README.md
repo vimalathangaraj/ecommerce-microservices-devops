@@ -54,3 +54,49 @@ curl http://localhost:5001/products
 
 👨‍💻 Author
 Vimala  – AWS DevOps Enthusiast 🚀
+***************************************************
+## 🐞 Troubleshooting
+
+### 🔹 1. Port Already Allocated
+If you see an error like:
+Error response from daemon: Bind for 0.0.0.0:5001 failed: port is already allocated
+
+makefile
+Copy code
+👉 This means another container is already using that port.
+
+✅ Fix:
+```bash
+# Stop all running containers
+docker stop $(docker ps -q)
+
+# Remove all stopped containers
+docker rm $(docker ps -aq)
+
+# Restart the stack
+docker compose up -d --build
+🔹 2. Old Images Not Updating
+If code changes don’t reflect inside the container:
+
+bash
+Copy code
+docker compose build --no-cache
+docker compose up -d
+🔹 3. Check Logs of a Service
+bash
+Copy code
+docker logs -f product-service
+🔹 4. Verify All Services Running
+bash
+Copy code
+docker ps
+Expected:
+
+Product Service → http://localhost:5001/products
+
+Cart Service → http://localhost:5002/
+
+Order Service → http://localhost:5003/
+
+Payment Service → http://localhost:5004/
+
