@@ -18,37 +18,11 @@ It simulates core features like **Products, Orders, Cart, and Payments**.
 
 ## 📂 Project Layout
 ecommerce-microservices-devops/
-│
-├── microservices/                # Application source code
-│   ├── product-service/           # Manages products
-│   │   ├── src/
-│   │   ├── Dockerfile
-│   │   └── requirements.txt
-│   ├── order-service/             # Handles orders
-│   ├── cart-service/              # User cart logic
-│   └── payment-service/           # Simulated payments
-│
-├── infra/                         # Infrastructure as Code (IaC)
-│   ├── terraform/                 # AWS infra provisioning
-│   ├── kubernetes/                # YAML files for K8s/EKS
-│   └── docker-compose.yml         # Local dev setup
-│
-├── cicd/                          # CI/CD Pipelines
-│   ├── jenkins/
-│   │   └── Jenkinsfile
-│   └── gitlab-ci.yml
-│
-├── monitoring/                    # Observability stack
-│   ├── prometheus/
-│   ├── grafana/
-│   └── elk-stack/
-│
-├── docs/                          # Documentation + Diagrams
-│   ├── architecture.png
-│   ├── workflow.md
-│   └── screenshots/
-│
-└── README.md                      # Project overview
+├── microservices/ # Product, Order, Cart, Payment services
+├── infra/ # Terraform + K8s manifests
+├── cicd/ # Jenkinsfile / GitHub Actions
+├── monitoring/ # Prometheus, Grafana, ELK configs
+└── README.md # Project overview
 
 
 ## 🚀 Quick Start (Local with Docker)
